@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>WEBg</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script defer="true" src="js/controls.js"></script>
+	<link rel="stylesheet" href="gameObj.css">
+	<script defer="true" src="js/gameObj.js"></script>
+</head>
+<body>
+	<div class="error">
+		Device width is too small !
+	</div>
+	<!--The counter-->
+	<header>
+		<div class="cntn">
+			Time Left: 
+			<div id="timeLeft">
+				0
+			</div>
+		</div>
+		<div class="cntn">
+			Kills:
+			<div id="kills">
+				0
+			</div>
+		</div>
+	</header>
+	
+	<!--The screen-->
+	<main id="screen">
+		<div id="fireArea"></div>
+		<div id="shotPointer"></div>
+		<div id="touchArea"></div>
+	</main>
+</body>
+</html>
