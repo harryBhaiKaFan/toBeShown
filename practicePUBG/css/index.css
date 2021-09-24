@@ -5,38 +5,78 @@
 }
 body
 {
-	width:100vw;
-	height:100vh;
 	background:#000;
+	min-width:100vw;
+	min-height:100vh;
 }
-.error{display:none;}
+.errorBox{display:none;}
 /***Basics done above***/
 
 header
 {
 	position: absolute;
 	top:0;
-	background:hsla();
-	color:hsla();
+	width:60vw;
+	left:20vw;
+	overflow-x:scroll;
+	color:hsla(0,0%,100%,0.825);
+	z-index:999;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	padding:1vh 1vw;
 	display:flex;
+	align-items:center;
+	justify-content:space-around;
 }
 
-#screen
+.cntn
 {
-	
+	max-width:50%;
+	font-size:1rem;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-family:monospace;
+	border-left:1px solid #fff;
+	padding-left:13px;
+}
+
+#kills{
+	font-family:impact;
+	font-weight:bold;
+	padding:1vh 1vw;
+}
+
+#timeLeft{
+	font-family:impact;
+	font-weight:bold;
+	padding:1vh 1vw;
+}
+
+/*******header End up here*******/
+#screen /***Screeny stuff*****/
+{
+	width:100vw;
+	height:100vh;
+	position:relative;
+	z-index:111;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	overflow:hidden;
 }
 
 
 /***responsive***/
 @media only screen and (max-width:450px)
 {
-	.error
+	.errorBox
 	{
 		 display:flex;
 		 align-items:center;
 		 justify-content:center;
-		 width:100%;
-		 height:100%;
+		 width:100vw;
+		 height:100vh;
 		 background:#ff0;
 		 color:#000;
 		 position:fixed;
