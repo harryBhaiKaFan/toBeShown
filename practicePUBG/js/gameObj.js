@@ -1,5 +1,6 @@
 let touchArea = document.getElementById("touchArea");
 let fireArea = document.getElementById("fireArea");
+let shotPointer = document.getElementById("shotPointer");
 let screenHeight = parseInt(getComputedStyle(screen).height);
 let screenWidth = parseInt(getComputedStyle(screen).width);
 let prevTouch = {
@@ -57,12 +58,24 @@ touchArea.ontouchmove = (e)=> {
 }
 
 touchArea.onmousemove = (e)=> {
-	
+	//To be implemented ....
 }
 
 fireArea.onclick = (e)=> {
+	let pointX = window.innerWidth/2;
+	let pointY = window.innerHeight/2;
+	navigator.vibrate(60);
 	targetArr.forEach((val,i,arr)=>{
-		
+		if(pointX >= val.x&&pointX <= val.w+val.x && pointY >= val.y && pointY <= val.h+val.y){
+			setTimeout(()=>{
+			screen.style.top="-10vh";
+			},1);
+			setTimeout(()=>{
+				
+			screen.style.top="0";
+			},100);
+			screen.removeChild(val.elem);
+		}
 	});
 }
 
@@ -77,4 +90,4 @@ setInterval(()=>{
 	
 	ox=prevTouch.x;
 	oy=prevTouch.y;
-},100);
+},80);

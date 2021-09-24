@@ -64,6 +64,7 @@ header
 	align-items:center;
 	justify-content:space-between;
 	overflow:hidden;
+	transition:all 0.2s;
 }
 
 
