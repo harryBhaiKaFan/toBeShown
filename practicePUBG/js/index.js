@@ -7,7 +7,11 @@ function randInt(min, max) {
 }
 
 function initColor(e) {
-	screen.style.background = "rgba("+randInt(0,70)+","+randInt(0, 70)+","+randInt(0, 70)+")";
+	bg.forEach((val,i,arr)=>{
+		val.style.background = "linear-gradient(to right,rgb("+randInt(0,150)+","+randInt(0, 150)+","+randInt(0, 150)+"),#000)";
+		val.style.top=randInt(-10,100)+"%";
+		val.style.left=randInt(-10,100)+"%";
+	});
 }
 
 window.onload=initColor;

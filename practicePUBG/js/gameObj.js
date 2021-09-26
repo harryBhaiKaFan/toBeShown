@@ -57,12 +57,15 @@ touchArea.ontouchmove = (e)=> {
 			if (val != null) {
 				val.x += diffX;
 				val.y += diffY;
-				bg.forEach((val, i, arr)=> {
-					val.style.top = parseInt(getComputedStyle(val).top)+diffY+"px";
-					val.style.left = parseInt(getComputedStyle(val).left)+diffX+"px";
-				});
 				val.refresh();
 			}
+		});
+		
+		bg.forEach((val, i, arr)=> {
+		/*	val.style.top = parseInt(getComputedStyle(val).top)+randInt(-100,100)+"px";
+			val.style.left = parseInt(getComputedStyle(val).left)+randInt(-100,100)+"px";*/
+			val.style.top=randInt(0,90)+"%";
+			val.style.left=randInt(0,90)+"%";
 		});
 	}
 

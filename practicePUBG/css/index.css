@@ -57,3 +57,10 @@ header
 	overflow:hidden;
 }
 
+.bg
+{
+	position:absolute;
+	z-index:-1;
+	width:10%;
+	height:10%;
+}
