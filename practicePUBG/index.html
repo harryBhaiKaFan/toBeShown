@@ -11,38 +11,25 @@
 	<script defer="true" src="./js/gameObj.js"></script>
 </head>
 <body>
-
-	<!--The error box-->
-	<div class="errorBox">
-		Device width is too small !
-	</div>
-	
 	<!--The counter-->
 	<header>
-		<div class="cntn">
-			TimeLeft
-			<div id="timeLeft">
-				0
-			</div>
-		</div>
-		<div class="cntn">
-			Kills
-			<div id="kills">
-				0
-			</div>
+		<div id="kills">
+			0
 		</div>
 	</header>
-	
+
 	<!--The screen-->
 	<main id="screen">
 		<div id="fireArea">
-			
+
 		</div>
 		<div id="shotPointer">
-			•
+			<span class="hyphen"> &minus; </span>
+			<span id="shot">•</span>
+			<span class="hyphen"> &minus; </span>
 		</div>
 		<div id="touchArea">
-			
+
 		</div>
 	</main>
 </body>

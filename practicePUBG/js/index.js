@@ -1,4 +1,5 @@
 let screen = document.getElementById("screen");
+let bg = document.querySelectorAll(".bg");
 let header = document.querySelector("header");
 
 function randInt(min, max) {
@@ -6,9 +7,7 @@ function randInt(min, max) {
 }
 
 function initColor(e) {
-	screen.style.background = "rgba("+randInt(0, 100)+","+randInt(0, 100)+","+randInt(0, 100)+",1)";
-
-	header.style.background = "rgba("+randInt(0, 100)+","+randInt(0, 150)+","+randInt(0, 100)+","+randInt(0.7, 1)+")";
+	screen.style.background = "rgba("+randInt(0,70)+","+randInt(0, 70)+","+randInt(0, 70)+")";
 }
 
 window.onload=initColor;

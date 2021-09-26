@@ -2,8 +2,6 @@
 #shotPointer{
 	height:100%;
 	width:0%;
-	border-left:1px dashed rgba(255,255,255,0.7);
-	border-right:1px dashed rgba(255,255,255,0.7);
 	display:flex;
 	align-items:center;
 	justify-content:center;
@@ -11,24 +9,32 @@
 	position: relative;
 	z-index:666;
 	color:#fff;
+	transition:all 0.05s;
 }
 
+.hyphen
+{
+	position:relative;
+	transition:all 0.05s;
+}
+
+
+/****Area Style*****/
 #fireArea{
 	width:50%;
 	height:100%;
-	background:red;
-	opacity:0.5;
+	background:transparent;
 	position:relative;
-	z-index:444;
+	z-index:888;
 }
+
 
 #touchArea{
 	position:relative;
-	z-index:444;
+	z-index:888;
 	width:50%;
 	height:100%;
-	background:blue;
-	opacity:0.5;
+	background:transparent;
 }
 
 /***Target style****/
@@ -42,3 +48,4 @@
 	position:absolute;
 	z-index:333;
 }
+

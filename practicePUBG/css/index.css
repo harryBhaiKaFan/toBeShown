@@ -7,26 +7,24 @@ body
 {
 	background:#000;
 	min-width:100vw;
-	min-height:100vh;
+	height:90vh;
 }
-.errorBox{display:none;}
 /***Basics done above***/
 
 header
 {
 	position: absolute;
 	top:0;
-	width:60vw;
-	left:20vw;
+	width:100vw;
 	overflow-x:scroll;
-	color:hsla(0,0%,100%,0.825);
+	color:rgba(255,255,255,0.5);
 	z-index:999;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-	padding:1vh 1vw;
+	padding:1vh 0;
 	display:flex;
 	align-items:center;
-	justify-content:space-around;
+	justify-content:center;
+	background:transparent;
+	font-size:1.6rem;
 }
 
 .cntn
@@ -46,45 +44,16 @@ header
 	font-weight:bold;
 	padding:1vh 1vw;
 }
-
-#timeLeft{
-	font-family:impact;
-	font-weight:bold;
-	padding:1vh 1vw;
-}
-
 /*******header End up here*******/
 #screen /***Screeny stuff*****/
 {
 	width:100vw;
-	height:100vh;
+	height:90vh;
 	position:relative;
 	z-index:111;
 	display:flex;
 	align-items:center;
 	justify-content:space-between;
 	overflow:hidden;
-	transition:all 0.2s;
 }
 
-
-/***responsive***/
-@media only screen and (max-width:450px)
-{
-	.errorBox
-	{
-		 display:flex;
-		 align-items:center;
-		 justify-content:center;
-		 width:100vw;
-		 height:100vh;
-		 background:#ff0;
-		 color:#000;
-		 position:fixed;
-		 z-index:9999;
-		 top:0;
-		 left:0;
-		 font-weight:bold;
-		 font-family:impact;
-	}
-}

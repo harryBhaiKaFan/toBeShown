@@ -1,13 +1,16 @@
 let touchArea = document.getElementById("touchArea");
 let fireArea = document.getElementById("fireArea");
 let shotPointer = document.getElementById("shotPointer");
+let hyphens = document.querySelectorAll(".hyphen");
 let screenHeight = parseInt(getComputedStyle(screen).height);
 let screenWidth = parseInt(getComputedStyle(screen).width);
 let prevTouch = {
 	x: null,
 	y: null
 };
-
+let shots = 0;
+let shotCX = parseInt(getComputedStyle(screen).width)/2;
+let shotCY = parseInt(getComputedStyle(screen).height)/2;
 let targetArr = [];
 
 
@@ -23,18 +26,22 @@ function createTarget(x, y) {
 	this.w = parseInt(getComputedStyle(elem).width);
 	this.h = parseInt(getComputedStyle(elem).height);
 	this.elem = elem;
-	this.refresh=function(){
-		this.elem.style.top=this.y+"px";
-		this.elem.style.left=this.x+"px";
+	this.refresh = function() {
+		this.elem.style.top = this.y+"px";
+		this.elem.style.left = this.x+"px";
 	}
 }
 
-for (let i = 0; i < 10; i++) {
-	targetArr.push(new createTarget(
-		randInt(10, 90)+"vw",
-		randInt(10, 90)+"vh"
-	));
+function insertTarget() {
+	for (let i = 0; i < 10; i++) {
+		targetArr.push(new createTarget(
+			randInt(0, 100)+"vw",
+			randInt(0, 100)+"vh"
+		));
+	}
 }
+
+insertTarget();
 
 /**** screen listeners ****/
 touchArea.ontouchmove = (e)=> {
@@ -42,19 +49,25 @@ touchArea.ontouchmove = (e)=> {
 
 	if (prevTouch.x != null &&
 		prevTouch.y != null) {
-			
-			let diffX=touch.screenX-prevTouch.x;
-			let diffY=touch.screenY-prevTouch.y;
-			
+
+		let diffX = -touch.screenX+prevTouch.x;
+		let diffY = -touch.screenY+prevTouch.y;
+
 		targetArr.forEach((val, i, arr)=> {
-			val.x+=diffX;
-			val.y+=diffY;
-			val.refresh();
+			if (val != null) {
+				val.x += diffX;
+				val.y += diffY;
+				bg.forEach((val, i, arr)=> {
+					val.style.top = parseInt(getComputedStyle(val).top)+diffY+"px";
+					val.style.left = parseInt(getComputedStyle(val).left)+diffX+"px";
+				});
+				val.refresh();
+			}
 		});
 	}
-	
-	prevTouch.x=touch.screenX;
-	prevTouch.y=touch.screenY;
+
+	prevTouch.x = touch.screenX;
+	prevTouch.y = touch.screenY;
 }
 
 touchArea.onmousemove = (e)=> {
@@ -62,32 +75,44 @@ touchArea.onmousemove = (e)=> {
 }
 
 fireArea.onclick = (e)=> {
-	let pointX = window.innerWidth/2;
-	let pointY = window.innerHeight/2;
-	navigator.vibrate(60);
-	targetArr.forEach((val,i,arr)=>{
-		if(pointX >= val.x&&pointX <= val.w+val.x && pointY >= val.y && pointY <= val.h+val.y){
-			setTimeout(()=>{
-			screen.style.top="-10vh";
-			},1);
-			setTimeout(()=>{
-				
-			screen.style.top="0";
-			},100);
-			screen.removeChild(val.elem);
+	let pointX = shotCX;
+	let pointY = shotCY;
+	navigator.vibrate(40);
+	hyphens.forEach((val, i, arr)=> {
+		val.style.fontSize = "1rem";
+	});
+	shotPointer.style.fontSize = "2.5rem";
+	targetArr.forEach((val, i, arr)=> {
+		if (val != null) {
+			if (pointX >= val.x && pointX <= val.w+val.x && pointY >= val.y && pointY <= val.h+val.y) {
+				screen.removeChild(val.elem);
+				arr[i] = null;
+				shots++;
+				kills.innerText = shots;
+				if (shots%10 == 0) {
+					insertTarget();
+				}
+			}
 		}
 	});
+	setTimeout(()=> {
+		shotPointer.style.fontSize = "2rem";
+		hyphens.forEach((val, i, arr)=> {
+			val.style.fontSize = "2rem";
+		});
+	},
+		200);
 }
 
-let ox=null,oy=null;
-setInterval(()=>{
-	if(ox==prevTouch.x){
-		prevTouch.x=null;
+let ox = null, oy = null;
+setInterval(()=> {
+	if (ox == prevTouch.x) {
+		prevTouch.x = null;
 	}
-	if(oy==prevTouch.y){
-		prevTouch.y=null;
+	if (oy == prevTouch.y) {
+		prevTouch.y = null;
 	}
-	
-	ox=prevTouch.x;
-	oy=prevTouch.y;
-},80);
+
+	ox = prevTouch.x;
+	oy = prevTouch.y;
+}, 80);
