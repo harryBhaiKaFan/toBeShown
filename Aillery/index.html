@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aillery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Myscripts -->
+    <script type="module" src="js/index.js" defer="true">
+    </script>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!-- Mystyles -->
+
+    <link rel="shortcut icon" href="media/app/img/logo.png" type="image/png" />
+    
+  </head>
+  <body class="light">
+
+  <!-- The loading section [done]-->
+  <section class="loader">
+      <div class="spinner">
+        _____
+      </div>
+   </section>
+
+   <!-- The header [done] -->
+    <header>
+      <div class="logo">
+        Aillery
+      </div>
+
+      <div id="changeTheme">
+      </div>
+		</header>
+
+    <!--
+      The Images section where all clicked images will be
+      placed.
+    -->
+    <section id="populated" class="screen images active">
+      <!-- 
+      Add images via javascript here 
+      -->
+      <button id="addImage">
+        &plus;
+      </button>
+    </section>
+
+    <!--
+      The image taking section takes an image from the 
+      desired camera and adds it to localStorage.
+    -->
+    <section class="screen ImageTaker inactive">
+      <div class="backButton">
+        X
+      </div>
+
+      <video id="imageHave">
+      </video>
+
+      <canvas id="imageCapture">
+        Not Supported &excl;
+      </canvas>
+
+      <button id="imageClick">
+      </button>
+    </section>
+
+    <!--
+      The image viewing section rendering the image in its
+      real size.
+    -->
+    <section class="screen ImageViewer inactive">
+      <div class="backButton">
+        X
+      </div>
+
+      <canvas id="viewImage">
+        Not Supported &excl;
+      </canvas>
+    </section>
+
+	</body>
+</html>
