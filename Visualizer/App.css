@@ -1,0 +1,94 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	transition:0.5s all;
+}
+
+:root
+{
+	--lightGreen:rgba(87,255,180,1);
+	--lightBlue:rgba(87,180,255,1);
+	--darkGreen:rgba(79,150,115,1);
+	--darkBlue:rgba(79,115,150,1);
+	--gray1:#efefef;
+	--gray2:#232323;
+}
+
+.light
+{
+	--themePrimary:var(--darkGreen);
+	--themeSecondary:var(--darkBlue);
+	--color:var(--gray1);
+}
+
+.dark
+{
+	--themePrimary:var(--lightGreen);
+	--themeSecondary:var(--lightBlue);
+	--color:var(--gray2);
+}
+
+body
+{
+	background:var(--color);
+}
+
+header
+{
+	display:flex;
+	height:min(10vh,100px);
+	align-items:center;
+	justify-content:space-around;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	box-shadow:0 -0.3px 8px var(--themePrimary);
+}
+
+h2
+{
+	font-family:Monospace;
+	background:linear-gradient(var(--themePrimary),var(--themeSecondary));
+	color:transparent;
+	-webkit-background-clip:text;
+	background-clip:text;
+}
+
+.toggle-theme
+{
+	width:min(8vmin,50px);
+	height:min(8vmin,50px);
+	border-radius:50%;
+	background:linear-gradient(var(--themePrimary),var(--themeSecondary));
+	cursor:pointer;
+	animation:anime 10s infinite normal linear;
+}
+
+@keyframes anime
+{
+	100%{
+		rotate:360deg;
+	}
+}
+
+main
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	flex-wrap:wrap;
+}
+section
+{
+	margin-top:80px;
+	border-radius:50px;
+	padding:min(2vh,20px) min(2vw,20px);
+	box-shadow:0 0px 5px var(--themeSecondary);
+	width:min(90vw,400px);
+}
+
+
+.more
+{
+	
+}
