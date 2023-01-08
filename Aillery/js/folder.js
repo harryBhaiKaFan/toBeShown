@@ -1,6 +1,6 @@
-import {Storage} from "/js/APIs/Storage.js";
-import {Settings} from "/js/Settings.js";
-import {OptionBox} from "/UI/js/OptionBox.js";
+import {Storage} from "./APIs/Storage.js";
+import {Settings} from "./Settings.js";
+import {OptionBox} from "../UI/js/OptionBox.js";
 
 const fldrImgs = document.querySelector("[data-folder-images]");
 const fldrName = document.querySelector("[data-folder-name]");

@@ -1,6 +1,6 @@
-import { Camera } from '/js/APIs/Camera.js';
+import { Camera } from './APIs/Camera.js';
 import { Storage } from './APIs/Storage.js';
-import { Settings } from '/js/Settings.js';
+import { Settings } from './Settings.js';
 
 const viewerElem = document.querySelector("[data-image-preview]");
 const backBtn = document.querySelector("[data-back-btn]");

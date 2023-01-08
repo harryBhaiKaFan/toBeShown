@@ -1,6 +1,6 @@
-@import url("/css/Init.css");
-@import url("/UI/css/OptionBox.css");
-@import url("/UI/css/Loader.css");
+@import url("./Init.css");
+@import url("../UI/css/OptionBox.css");
+@import url("../UI/css/Loader.css");
 
 header
 {

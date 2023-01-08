@@ -1,5 +1,5 @@
-import {Storage} from '/js/APIs/Storage.js';
-import {Settings} from '/js/Settings.js';
+import {Storage} from './APIs/Storage.js';
+import {Settings} from './Settings.js';
 
 const backBtn = document.querySelector("[data-back-btn]");
 const imgName = document.querySelector("[data-image-name]");

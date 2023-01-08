@@ -1,7 +1,7 @@
-import {Settings} from '/js/Settings.js';
-import {Storage} from '/js/APIs/Storage.js';
-import {OptionBox} from '/UI/js/OptionBox.js';
-import {Loader} from '/UI/js/Loader.js';
+import {Settings} from './Settings.js';
+import {Storage} from './APIs/Storage.js';
+import {OptionBox} from '../UI/js/OptionBox.js';
+import {Loader} from '../UI/js/Loader.js';
 
 const folderView=document.querySelector("[data-view-folders]");
 const plus=document.querySelector("[data-plus]");
