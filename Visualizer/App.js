@@ -1,72 +1,18 @@
-const togTheme=document.querySelector("[data-toggle-theme]");
-const structElem=document.querySelector("[data-structs]");
-const algoElem=document.querySelector("[data-algos]");
-const moreStructElem=document.querySelector("[data-more-structs]");
-const moreAlgoElem=document.querySelector("[data-more-algos]");
+import {
+	Settings
+} from './Settings.js';
 
-//grabbed elements
-
-async function getStructs(){
-	const data=await fetch("./struct.json");
-	const json=await data.json();
-	
-	return (json);
-}
-// an async function for retrieving json
+const settings_btn = document.querySelector("[data-settings-btn]");
+const dsItems = document.querySelectorAll("[data-ds-item]");
+const algoItems = document.querySelectorAll("[data-algo-items");
 
 const App={
-	DATA:null,
-	init: function (){
-		this.updateTheme();
+	init: function(){
+		Settings.init();
+		document.body.classList.add(Settings.Theme);
 		
-		getStructs().then((data)=>{
-			this.DATA=data;
-			this.renderData();
-			this.setUpEvents();
-		}).catch((err)=>{
-			console.log(err);
-			this.abort("Unable to get Data!");
-		});
-		// Handling data
-		
-		
-		togTheme.addEventListener("click",()=>{
-			this.toggleTheme();
-		});
-	},
-	abort: function (msg){
-		alert(msg);
-	},
-	renderData: function (){
 		
 	},
-	setUpEvents: function (){
-		
-	},
-	updateTheme: function (){
-		let currTheme=localStorage.getItem("--VisTheme");
-		
-		if(currTheme === null){
-			localStorage.setItem("--VisTheme","light");
-			return;
-		}
-		
-		let body=document.body;
-		body.className=currTheme;
-	},
-	toggleTheme:function(){
-		let body=document.body;
-		body.classList.toggle("light");
-		body.classList.toggle("dark");
-		
-		if(body.classList.contains("dark")){
-			localStorage.setItem("--VisTheme","dark");
-		}else{
-			localStorage.setItem("--VisTheme","light");
-		}
-	}
 }
 
-
-
-window.onload=()=>App.init();
+window.onload=App.init;

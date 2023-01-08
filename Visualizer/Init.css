@@ -1,0 +1,58 @@
+:root
+{
+	--lightGreen:rgba(87,255,180,1);
+	--lightBlue:rgba(87,180,255,1);
+	--darkGreen:rgba(79,150,115,1);
+	--darkBlue:rgba(79,115,150,1);
+	--gray1:#efefef;
+	--gray2:#232323;
+	
+}
+
+.light
+{
+	--themePrimary:var(--darkGreen);
+	--themeSecondary:var(--darkBlue);
+	--color:var(--gray1);
+}
+
+.dark
+{
+	--themePrimary:var(--lightGreen);
+	--themeSecondary:var(--lightBlue);
+	--color:var(--gray2);
+}
+
+li
+{
+	list-style-type:none;
+	font-size:0.8rem;
+	font-family:monospace;
+	background:var(--color);
+	margin-top:15px;
+	padding:8px;
+	border-radius:10px;
+	display:grid;
+	place-items: center;
+	box-shadow:0 0px 5px var(--themePrimary);
+}
+
+.ds-list
+{
+	color:var(--themePrimary);
+}
+
+.algo-list
+{
+	color:var(--themeSecondary);
+}
+
+.ds-item
+{
+	
+}
+
+.algo-item
+{
+	
+}
