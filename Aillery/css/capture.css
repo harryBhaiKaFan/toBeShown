@@ -1,0 +1,74 @@
+@import url("/css/Init.css");
+
+
+.image-preview
+{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:100vw;
+	height:100vh;
+	position: relative;
+	top:0;
+	left:0;
+	z-index:111;
+}
+
+.back-btn
+{
+	font-size:1.2rem;
+	font-family:monospace;
+	font-weight:20;
+	position: absolute;
+	z-index:999;
+	top:2vh;
+	left:2vw;
+	padding:4vmin;
+	background:var(--fadedColor);
+	opacity: 0.7;
+	border-radius:50%;
+
+}
+
+.back-btn:active
+{
+	background-color: var(--theme);
+}
+
+.click-btn
+{
+	position: absolute;
+	z-index:999;
+	left:calc(50vw - 8vmin);
+	width:16vmin;
+	height:16vmin;
+	border-radius:50%;
+	top:calc(92vh - 8vmin);
+	border:none;
+	background: linear-gradient(#dddd,#222d);
+}
+
+.click-btn:active
+{
+	border:3px solid var(--shadowColor);
+}
+
+.change-mode-btn
+{
+	font-size:1.2rem;
+	font-family:monospace;
+	font-weight:20;
+	position: absolute;
+	z-index:999;
+	top:2vh;
+	left:86vw;
+	padding:4vmin;
+	background:var(--fadedColor);
+	border-radius:50%;
+	opacity: 0.7;
+}
+
+.change-mode-btn:active
+{
+	background:var(--theme);
+}

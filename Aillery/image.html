@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>View pictures-Aillery</title>
+
+		<link rel="shortcut icon" href="media/app/img/logo.png" type="image/png" />
+
+		<link rel="stylesheet" href="/css/image.css"/>
+		<script type="module" src="/js/image.js">
+		</script>
+
+	</head>
+	<body>
+		<!--
+			The image viewing section rendering the image in its
+			real size.
+		-->
+
+		<header>
+			<div class="back-btn" data-back-btn>
+				&leftarrow;
+			</div>
+
+			<div class="image-name" data-image-name>
+			</div>
+		</header>
+
+		<canvas class="image-view" data-image-view>
+			Not Supported &excl;
+		</canvas>
+
+		<footer>
+			<input type="button" value="Draw" class="edit-image btm-btn" data-edit-image/>
+			<input type="button" value="Save" class="save-image btm-btn hidden-btn" data-save-image/>
+			<input type="color" class="choose-pen-color btm-btn" data-choose-pen-color/>
+
+			<input type="number" value="5" class="choose-pen-width btm-btn" data-choose-pen-width/>
+		</footer>
+
+
+	</body>
+	<script src="http://localhost:3000/eruda.js"></script>
+	<script>eruda.init()</script>
+</html>

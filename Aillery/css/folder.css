@@ -1,0 +1,87 @@
+@import url("/css/Init.css");
+@import url("/UI/css/OptionBox.css");
+
+header
+{
+	background-color: var(--theme);
+	color:var(--Ttheme);
+	font-family:serif;
+	max-height:15%;
+	overflow:scroll;
+	width:100vw;
+	font-size:1.2rem;
+	display:flex;
+	align-items:center;
+	justify-content: space-around;
+	position:sticky;
+	top:0;
+	left:0;
+	padding:3% 0;
+	box-shadow:0px 0px 5px var(--shadowColor);
+}
+
+.back-btn
+{
+	font-family:arial;
+	margin-right:10%;
+	padding:1vmin;
+}
+
+.back-btn:hover
+{
+	background: var(--fadedColor);
+}
+
+.folder-name
+{
+	font-family:serif;
+	font-size:1rem;
+	font-weight:normal;
+}
+
+.add-img
+{
+	background:var(--fadedColor);
+	margin:5px;
+	margin-top:15px;
+	padding:15px;
+	border-radius:10px;
+	font-weight:150;
+	font-family:arial;
+	font-size:1.8rem;
+	width:max-content;
+}
+.add-img:hover
+{
+	background:var(--theme);
+}
+
+
+.folder-images
+{
+	margin-top:10px;
+	padding:5px;
+	display:flex;
+	gap:1em;
+	flex-wrap:wrap;
+}
+
+.image
+{
+	padding:5px;
+	margin:5px;
+}
+
+.image-icon
+{
+	width:calc(16 * 8px);
+	height:calc(9 * 8px);
+	object-fit:cover;
+	border-radius:5px;
+}
+
+.image-name
+{
+	font-family:monospace;
+	margin-too:4px;
+}
