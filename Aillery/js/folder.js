@@ -38,7 +38,7 @@ function setImageHandler(image,folder)
 			case "Open":
 				Settings.opened_image = image.id;
 				Settings.pushPage(location.href);
-				location.replace("/image.html");
+				location.replace("./image.html");
 				break;
 		}
 	}).catch(()=>{
@@ -82,7 +82,7 @@ const FolderHandler = {
 	},
 	addImage: function(){
 		Settings.pushPage(location.href);
-		location.replace("/capture.html");
+		location.replace("./capture.html");
 	},
 	prevPage: function(){
 		let url = Settings.popPage();
