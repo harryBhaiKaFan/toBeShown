@@ -36,7 +36,7 @@ function setFolderHandler(folder)
 			case "Open":
 				Settings.opened_folder = folder.id;
 				Settings.pushPage(location.href);
-				location.replace('./folder.html');
+				location.replace('/folder.html');
 				break;
 		}
 	}).catch(()=>{
@@ -137,7 +137,7 @@ const App = {
 	addImage: function (){
 		/* all AI handled by capture.html */
 		Settings.pushPage(location.href);
-		location.replace("./capture.html");
+		location.replace("/capture.html");
 	}
 }
 
