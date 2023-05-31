@@ -1,9 +1,21 @@
-import {Settings} from '/Settings.js';
+import { bubbleSort } from "./bubbleSort";
+import { selectionSort } from "./selectionSort";
+import { insertionSort } from "./insertionSort";
 
-const App = {
-	init: function(){
-		
-	}
+
+function BubbleSortVis(root)
+{
+
 }
 
-window.onload = App.init;
+export const ALGOS = {
+    init: function(algo,root){
+        switch (algo)
+        {
+            case "bubbleSort":
+                BubbleSortVis(root);
+                break;
+            default:
+        }
+    }
+};

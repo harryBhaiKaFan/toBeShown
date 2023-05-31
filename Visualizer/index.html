@@ -13,36 +13,44 @@
 
 	<body>
 		<header>
-			<h2>DS | ALGOS</h2>
+			<h2 data-heading>DS | ALGOS</h2>
+			<div data-back-btn class="back-btn hidden">
+				&larr;
+			</div>
 			<div data-settings-btn class="settings-btn">
 				*
 			</div>
 		</header>
 
-		<main>
+		<section data-content class="content">
 			<section class="structs" data-structs>
-				<h3>Data structures</h3>
+				<h3 class="ds-head">Data structures</h3>
 				<ul class="ds-list">
-					<li data-ds-item class="ds-item">Stack</li>
-					<li data-ds-item class="ds-item">Tree</li>
-					<li data-ds-item class="ds-item">Linked List</li>
-					<li data-ds-item class="ds-item">Array</li>
-					<li data-ds-item class="ds-item">Graph</li>
-					<li data-ds-item class="ds-item">Queue</li>
+					<li data-ds-item data-ds-type="stack" class="ds-item">Stack</li>
+					<li data-ds-item data-ds-type="tree" class="ds-item">Tree</li>
+					<li data-ds-item data-ds-type="linkedList" class="ds-item">Linked List</li>
+					<li data-ds-item data-ds-type="array" class="ds-item">Array</li>
+					<li data-ds-item data-ds-type="graph" class="ds-item">Graph</li>
+					<li data-ds-item data-ds-type="queue" class="ds-item">Queue</li>
+					<li data-ds-item data-ds-type="map" class="ds-item">Map</li>
 				</ul>
 			</section>
 
-			<section class="alogs" data-algos>
-				<h3>Alogrithms</h3>
+			<section class="algos" data-algos>
+				<h3 class="algo-head">Algorithms</h3>
 				<ul class="algo-list">
-					<li data-algo-item class="algo-item">Bubble Sort</li>
-					<li data-algo-item class="algo-item">Insertion Sort</li>
-					<li data-algo-item class="algo-item">Quick Sort</li>
-					<li data-algo-item class="algo-item">Selection Sort</li>
-					<li data-algo-item class="algo-item">Counting Sort</li>
-					<li data-algo-item class="algo-item">Heap Sort</li>
+					<li data-algo-item data-algo-type="bubbleSort" class="algo-item">Bubble Sort</li>
+					<li data-algo-item data-algo-type="insertionSort" class="algo-item">Insertion Sort</li>
+					<li data-algo-item data-algo-type="quickSort" class="algo-item">Quick Sort</li>
+					<li data-algo-item data-algo-type="selectionSort" class="algo-item">Selection Sort</li>
+					<li data-algo-item data-algo-type="countingSort" class="algo-item">Counting Sort</li>
+					<li data-algo-item data-algo-type="heapSort" class="algo-item">Heap Sort</li>
+					<li data-algo-item data-algo-type="mergeSort" class="algo-item">Merge Sort</li>
 				</ul>
 			</section>
-		</main>
+		</section>
+
+		<section data-vis class="vis hidden">
+		</section>
 	</body>
 </html>

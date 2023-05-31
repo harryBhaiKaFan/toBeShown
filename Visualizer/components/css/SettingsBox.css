@@ -1,0 +1,80 @@
+.settings-box 
+{
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(110,110,110,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings-box-close-btn
+{
+    position: absolute;
+    top:1vh;
+    left:1vw;
+    padding: 2vh 2vw;
+    display: inline-block;
+    font-family:  arial;
+    font-size: 1.6rem;
+    display: inline-block;
+    width:max-content;
+    height:max-content;
+    background: #fff;
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: lighter;
+}
+
+.settings-box-close-btn:hover
+{
+    opacity: 0.6;
+}
+
+.settings-box-theme-input
+{
+    margin-top:12vh;
+    width:15vmin;
+    height:15vmin;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bx-t-light
+{
+    background: yellow;
+    border: 10px dashed rgba(110,110,110,1);
+}
+
+.bx-t-dark
+{
+    background: transparent;
+    border-bottom: 10px solid #f0f0f0;
+    transform: rotate(45deg);
+}
+
+.settings-box-num-txt
+{
+    border-top: 1px solid var(--themePrimary);
+    padding-top:3vh;
+    color:#fff;
+    margin-top: 3vh;
+    font-weight: lighter;
+    font-size:1.2rem;
+    font-family: monospace;
+}
+
+.settings-box-num-input
+{
+    background:linear-gradient(45deg,var(--themePrimary),var(--themeSecondary));
+    color: var(--color);
+    font-size:1.1rem;
+    text-align: center;
+    margin-top:5px;
+    padding:3px;
+}

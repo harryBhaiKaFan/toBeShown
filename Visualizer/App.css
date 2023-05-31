@@ -1,4 +1,4 @@
-@import url("/Init.css");
+@import url("./components/css/SettingsBox.css");
 
 *{
 	margin:0;
@@ -6,6 +6,32 @@
 	box-sizing:border-box;
 	transition:0.5s all;
 }
+
+:root
+{
+	--lightGreen:rgba(87,255,180,1);
+	--lightBlue:rgba(87,180,255,1);
+	--darkGreen:rgba(79,150,115,1);
+	--darkBlue:rgba(79,115,150,1);
+	--gray1:#efefef;
+	--gray2:#232323;
+}
+
+.light
+{
+	--themePrimary:var(--darkGreen);
+	--themeSecondary:var(--darkBlue);
+	--color:var(--gray1);
+}
+
+.dark
+{
+	--themePrimary:var(--lightGreen);
+	--themeSecondary:var(--lightBlue);
+	--color:var(--gray2);
+}
+
+
 
 body
 {
@@ -54,33 +80,127 @@ h2
 	transform:rotate(90deg);
 }
 
-main
+.back-btn
 {
-	display:flex;
-	flex-direction:row;
-	justify-content:space-around;
-	flex-wrap:wrap;
-	padding-bottom:20px;
+	font-family:monospace;
+	background:linear-gradient(var(--themePrimary),var(--themeSecondary));
+	color:transparent;
+	-webkit-background-clip:text;
+	background-clip:text;
+	font-size:2.3rem;
+	padding:1vh 1vw;
+	cursor: pointer;
 }
 
-section
+.content
 {
-	margin-top:80px;
-	border-radius:50px;
-	padding:min(2vh,20px) min(2vw,20px);
+	display:flex;
+	flex-wrap: wrap;
+	column-gap:80px;
+	justify-content: center;
+	padding-bottom: 4vh;
+}
+
+h3
+{
+	text-align:center;
+	font-family:Serif;
+}
+
+li
+{
+	list-style-type:none;
+	font-size:0.9rem;
+	font-family:monospace;
+	background:var(--color);
+	margin-top:15px;
+	padding:8px;
+	border-radius:10px;
+	display:grid;
+	place-items: center;
+}
+
+
+.ds-head
+{
+	color: var(--themePrimary);
+	font-size:1.4rem;
+}
+
+.algo-head
+{
+	color: var(--themeSecondary);
+	font-size:1.4rem;
+}
+
+
+
+.ds-list
+{
+	color:var(--themePrimary);
+}
+
+.algo-list
+{
+	color:var(--themeSecondary);
+}
+
+.ds-item
+{
+	box-shadow:0 0px 5px var(--themePrimary);
+	cursor:pointer;
+
+}
+
+.ds-item:hover {
+	color:var(--themeSecondary);
+	box-shadow:0px 0px 5px var(--themeSecondary);
+}
+
+.algo-item
+{
 	box-shadow:0 0px 5px var(--themeSecondary);
+	cursor: pointer;
+}
+
+.algo-item:hover {
+	color:var(--themePrimary);
+	box-shadow:0px 0px 5px var(--themePrimary);
+}
+
+
+.structs,
+.algos
+{
+	margin-top:4vh;
+	border-radius:30px;
+	padding:min(2vh,20px) min(2vw,20px);
 	width:min(90vw,400px);
 	display:flex;
 	align-items:center;
 	justify-content: space-around;
 	flex-direction:column;
 	gap:30px 30px;
-	
 }
 
-section > h3
+.structs
 {
-	text-align:center;
-	font-family:Serif;
-	font-family:1.5rem;
+	box-shadow:0 0px 5px var(--themeSecondary);
+}
+
+.algos
+{
+	box-shadow:0 0px 5px var(--themePrimary);
+}
+
+
+.vis
+{
+	outline:3px solid red;
+}
+
+
+.hidden
+{
+	display: none;
 }
